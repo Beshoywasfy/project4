@@ -1,1 +1,24 @@
-<paste log output from Kubernetes-mediated prediction, here>
+ubuntu@ip-172-31-8-99:~/DevOps_Microservices/project-ml-microservice-kubernetes$ sudo ./run_kubernetes.sh
+deployment.apps/mydev created
+NAME                     READY   STATUS              RESTARTS   AGE
+mydev-74b58d8596-b759z   0/1     ContainerCreating   0          0s
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 934-838-159
+[2020-07-03 13:44:13,702] INFO in app: JSON payload:
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-07-03 13:44:13,718] INFO in app: Inference payload DataFrame:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-07-03 13:44:13,732] INFO in app: Scaling Payload:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-07-03 13:44:13,735] INFO in app: prediction is:
+[20.35373177134412]
+172.17.0.1 - - [03/Jul/2020 13:44:13] "POST /predict HTTP/1.1" 200 -
